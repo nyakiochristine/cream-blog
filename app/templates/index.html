@@ -1,0 +1,22 @@
+{%extends base.html%}
+{%block content%}
+
+<div class = "index">
+    <div class = "container">
+        <h1 class = "text-center" head> Cream Blog</h1>
+        <div class = "subheadings">
+            <p><strong> Welcome to Cream Blog!Feel free to  post, read and comment here</strong></p>
+        </div>
+            <div class = "quotes text-center">
+            <h5>Today's Quote</h5>
+            <p id = "quote">{{quote.quote}}</p>
+            <p id = "author">{{quote.author}}</p>
+            </div>
+                <div class = "btn text-center">
+                    <a href="/home" class="btn btn-primary">View Other Blogs</a>
+                </div>
+
+    </div>
+</div>
+
+{%endblock%}
