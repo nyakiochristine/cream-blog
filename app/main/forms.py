@@ -7,8 +7,8 @@ from flask_wtf import FlaskForm
 
 
 class UpdateProfileForm(FlaskForm):
-    username = StringField('username', validators=[DataRequired])
-    email = StringField('email', validators=[DataRequired,Email()])
+    username = StringField('username', validators=[DataRequired()])
+    email = StringField('email', validators=[DataRequired(),Email()])
     picture = FileField(' Update Profile picture', validators=[FileAllowed('jpg','png')])
     submit = SubmitField('Update Profile')
     
@@ -24,4 +24,10 @@ class UpdateProfileForm(FlaskForm):
             user = User.query.filter_by(email = email).first()
             if user:
                 raise ValidationError("Email is already taken or it is in use. Use a different one")
+            
+class PostForm(FlaskForm):
+    title = StringField('Title', validators=[DataRequired()])
+    content = StringField('Content', validators=[DataRequired()])
+    submit = SubmitField('Submit Post', validators=[DataRequired()])
+    
     
