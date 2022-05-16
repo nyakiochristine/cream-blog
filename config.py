@@ -13,6 +13,8 @@ class ProdConfig(Config):
     Production configuration child class
     '''
     
+    SQLALCHEMY_DATABASE_URL = 'postgresql+psycopg2:/moringa:nyakio@localhost/cream-blog'
+    
 class DevConfig(Config):
     '''
     Development configuration child class
